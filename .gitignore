@@ -1,0 +1,8 @@
+obj/
+packages/
+.vs/
+*.nuget.cache
+bin/
+.vscode
+/store
+T4Customizado.Interface/Resultados
