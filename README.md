@@ -33,3 +33,6 @@ services.AddHttpClient<IHttpBinService, HttpBinService>()
     .AddPolicyHandler(GetRetryPolicy(retryCount: 3))
     .AddPolicyHandler(GetCircuitBreakerPolicy(exceptionsAllowedBeforeBreaking: 5, durationOfBreakInSeconds: 30));
 ```
+
+## ✅ Como testar
+Chamando o endpoint [GET]/httpbin/{code} com o valor 500 para o parâmetro **code** ele irá realizar uma requisição http para a api HttpBin e retornar status code 500, com isso será possível verificar o retry e o circuit breaker no log do console.
